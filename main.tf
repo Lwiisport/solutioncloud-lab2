@@ -1,8 +1,6 @@
-provider "docker" {}
-
 # Pulls the image
-resource "docker_image" "var.image" {
-  name = image
+resource "docker_image" "app" {
+  name = var.image
 }
 
 # Create a container
@@ -11,9 +9,9 @@ resource "docker_container" "clientweb" {
   image = docker_image.image.image_id
   name  = "clientweb-${count.index}"
   memory = var.container_memory
-  priviledged = var.priviledged
+  privileged = var.privileged
   ports {
     internal = 80
-    external = var.port + count_index
+    external = var.port + count.index
   }
 }

@@ -8,10 +8,10 @@ variable "container_memory" {
   description = "container memory"
 }
 
-variable "priviledged" {
+variable "privileged" {
   type        = bool
   default     = false
-  description = "container priviledged"
+  description = "container privileged"
 }
 
 variable "number_container" {

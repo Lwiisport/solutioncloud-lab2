@@ -1,6 +1,6 @@
 output "container_names" {
   description = "Noms des conteneurs créés"
-  value       = docker_container.clientweb-[*].name
+  value       = docker_container.clientweb[*].name
 }
 
 output "external_ports" {
