@@ -6,7 +6,7 @@ resource "docker_image" "app" {
 # Create a container
 resource "docker_container" "clientweb" {
   count = var.number_container
-  image = docker_image.image.image_id
+  image = docker_image.app.image_id
   name  = "clientweb-${count.index}"
   memory = var.container_memory
   privileged = var.privileged
